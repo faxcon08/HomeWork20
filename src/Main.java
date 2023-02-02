@@ -9,6 +9,10 @@ public class Main {
         String separator = "--------------------------------";
         System.out.println(separator + separator);
     }
+    public static void printSeparator(String message) {
+        String separator = " =============  ";
+        System.err.println(separator + message + separator);
+    }
     public static void main(String[] args) {
         ArrayList<Transport> transportsList = new ArrayList<>();
         ArrayList<Mechanic> mechanicsList = new ArrayList<>();
@@ -36,6 +40,8 @@ public class Main {
         transportsList.add(new Bus("Икарус", "553", 3, busDriversList.get(1), mechanicsList));
         transportsList.add(new Truck("Scania", "S580 Highline", 5, truckDriversList.get(0), mechanicsList2));
 
+        printSeparator("First Task 1.1");
+
         for (Transport transport : transportsList) {
             printSeparator();
             transport.printMessage();
@@ -44,6 +50,8 @@ public class Main {
         printSeparator();
         mechanicsList.get(0).makeDiagnostic();
         mechanicsList.get(1).repairTransport();
+
+        printSeparator("Second Task 1.2");
 
     } // main
 } // Main

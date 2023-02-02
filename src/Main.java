@@ -5,13 +5,16 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Main {
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
     public static void printSeparator() {
         String separator = "--------------------------------";
-        System.out.println(separator + separator);
+        System.out.println(ANSI_GREEN+separator + separator+ANSI_RESET);
     }
     public static void printSeparator(String message) {
         String separator = " =============  ";
-        System.out.println(separator + message + separator);
+        System.out.println(ANSI_RED+ separator + message + separator + ANSI_RESET);
     }
     public static void main(String[] args) {
         ArrayList<Transport> transportsList = new ArrayList<>();

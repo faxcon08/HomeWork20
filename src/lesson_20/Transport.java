@@ -10,6 +10,8 @@ abstract public class Transport<T extends Driver, S extends Mechanic> {
         return mechanicsList;
     }
 
+    abstract public boolean isNeedDiagnostic();
+
     public void printMechanicsList() {
         if(mechanicsList!=null) {
             if (mechanicsList.size() > 0) {

@@ -5,6 +5,10 @@ import java.util.ArrayList;
 public class Truck extends Transport <TruckDriver,Mechanic> implements Competing{
     private TruckDriver driver;
     private LoadCapacity loadCapacity;
+    @Override
+    public boolean isNeedDiagnostic() {
+        return true;
+    }
 
     public LoadCapacity getLoadCapacity() {
         return loadCapacity;

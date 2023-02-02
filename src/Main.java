@@ -11,7 +11,7 @@ public class Main {
     }
     public static void printSeparator(String message) {
         String separator = " =============  ";
-        System.err.println(separator + message + separator);
+        System.out.println(separator + message + separator);
     }
     public static void main(String[] args) {
         ArrayList<Transport> transportsList = new ArrayList<>();
@@ -36,9 +36,15 @@ public class Main {
         truckDriversList.add(new TruckDriver("First Truck Driver", 2));
         truckDriversList.add(new TruckDriver("Second Truck Driver", 7));
 
-        transportsList.add(new Car("Lada", "Vesta", 1.5, carDriversList.get(0), mechanicsList));
-        transportsList.add(new Bus("Икарус", "553", 3, busDriversList.get(1), mechanicsList));
-        transportsList.add(new Truck("Scania", "S580 Highline", 5, truckDriversList.get(0), mechanicsList2));
+        Transport car1 = new Car("Lada", "Vesta", 1.5, carDriversList.get(0), mechanicsList);
+        Transport car2 = new Car("Lada", "XRay", 1.8, carDriversList.get(1), mechanicsList2);
+        Transport bus1 = new Bus("Икарус", "553", 3, busDriversList.get(1), mechanicsList);
+        Transport truck1 = new Truck("Scania", "S580 Highline", 5, truckDriversList.get(0), mechanicsList2);
+
+        transportsList.add(car1);
+        transportsList.add(bus1);
+        transportsList.add(truck1);
+        transportsList.add(car2);
 
         printSeparator("First Task 1.1");
 
@@ -52,6 +58,16 @@ public class Main {
         mechanicsList.get(1).repairTransport();
 
         printSeparator("Second Task 1.2");
+
+        ServiceStation serviceStation = new ServiceStation<>();
+        for(Transport ts: transportsList)
+            serviceStation.addToQueue(ts);
+        printSeparator();
+        System.out.println("Очередь на обслуживание: "+serviceStation);
+        printSeparator();
+
+        for(int i = 0; i < transportsList.size();i++)
+            serviceStation.makeDiagnostic();
 
     } // main
 } // Main

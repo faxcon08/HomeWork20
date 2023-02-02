@@ -5,7 +5,10 @@ import java.util.ArrayList;
 public class Bus extends Transport<BusDriver, Mechanic> implements Competing {
     private BusDriver driver;
     private BusCapacity busCapacity;
-
+    @Override
+    public boolean isNeedDiagnostic() {
+        return false;
+    }
     public BusCapacity getBusCapacity() {
         return busCapacity;
     }

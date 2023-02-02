@@ -6,6 +6,11 @@ public class Car  extends Transport <CarDriver, Mechanic> implements Competing{
     private CarDriver driver;
     private BodyType bodyType;
 
+    @Override
+    public boolean isNeedDiagnostic() {
+        return true;
+    }
+
     public BodyType getBodyType() {
         return bodyType;
     }
